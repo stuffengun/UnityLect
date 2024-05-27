@@ -259,7 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67d4c918909f1540ac71db2887619b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3113210804110710180, guid: 991562adb621c0345bff8a519efc7f4c, type: 3}
+  player: {fileID: 736114549832765069, guid: 991562adb621c0345bff8a519efc7f4c, type: 3}
+  wall: {fileID: 3981715595073402443, guid: e4c0180fc07bd114caca54c2a244d809, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

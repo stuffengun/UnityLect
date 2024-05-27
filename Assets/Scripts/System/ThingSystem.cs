@@ -17,11 +17,16 @@ public class ThingSystem : MonoBehaviour
     private float tickTime = 0;
 
     public GameObject player;
+    public GameObject wall;
 
     void Start()
     {
         Instance = this;
         InstantiateThing(player, Vector2Int.zero);
+       InstantiateThing(wall, new Vector2Int(3,0));
+        InstantiateThing(wall, new Vector2Int(4, 0));
+        InstantiateThing(wall, new Vector2Int(4, 1));
+       
     }
 
     void Update()
