@@ -16,12 +16,12 @@ public class MoveBehavior : Behavior
 
     public override void InitSteps()
     {
-        steps = new List<Step>
-        { new MoveStep(moveComp, new Vector2Int(0,0),new Vector2Int(1,0)),
-         new MoveStep(moveComp, new Vector2Int(1,0),new Vector2Int(2,0)),
-          new MoveStep(moveComp, new Vector2Int(2,0),new Vector2Int(3,0)),
-           new MoveStep(moveComp, new Vector2Int(3,0),new Vector2Int(4,0)),
-            new MoveStep(moveComp, new Vector2Int(4,0),new Vector2Int(5,0))
-        };
+        steps = new();
+        List<Vector2Int> path;
+        if(ThingSystem.Instance.PathFind(from,to,out path))
+            for(int i=0;i<path.Count - 1;i++)
+            {
+                steps.Add(new MoveStep(moveComp, path[i], path[i+1]));
+            }
     }
 }

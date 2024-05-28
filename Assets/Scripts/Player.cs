@@ -17,10 +17,9 @@ public class Player : Entity
 
     public override void OnStart()
     {
-        base.OnStart();
 
         MoveComp moveComp = (MoveComp)GetComp(typeof(MoveComp));
         BehaviorComp behaviorComp = (BehaviorComp)GetComp(typeof(BehaviorComp));
-        behaviorComp.SetBehavior(new MoveBehavior(this, Vector2Int.zero, Vector2Int.one));
+        behaviorComp.SetBehavior(new MoveBehavior(this, Pos, new Vector2Int(7, 0)));
     }
 }
