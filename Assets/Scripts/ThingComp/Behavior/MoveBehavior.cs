@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class MoveBehavior : Behavior
@@ -13,15 +15,12 @@ public class MoveBehavior : Behavior
         this.to = to;
     }
 
-
     public override void InitSteps()
     {
         steps = new();
         List<Vector2Int> path;
-        if(ThingSystem.Instance.PathFind(from,to,out path))
-            for(int i=0;i<path.Count - 1;i++)
-            {
-                steps.Add(new MoveStep(moveComp, path[i], path[i+1]));
-            }
+        if (ThingSystem.Instance.PathFind(moveComp.Thing.Pos, to, out path, 200))
+            for (int i = 0; i < path.Count - 1; i++)
+                steps.Add(new MoveStep(moveComp, path[i], path[i + 1]));
     }
 }

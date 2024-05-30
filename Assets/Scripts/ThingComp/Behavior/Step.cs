@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Step
 {
+
     public virtual void OnStart() { }
     public virtual void Tick() { }
     public virtual void OnCancel() { }
